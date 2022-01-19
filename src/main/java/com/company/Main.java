@@ -14,12 +14,13 @@ public class Main {
         System.out.println(user2);*/
 
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("fullName","Donal Trump");
-        jsonObject.put("birthDate","14-06-1946");
-        jsonObject.put("email","donaldtrump@aol.com");
+        jsonObject.put("fullName", "Donal Trump");
+        jsonObject.put("birthDate", "14-06-1946");
+        jsonObject.put("email", "donaldtrump@aol.com");
 
         try {
-            FileWriter myFileWriter = new FileWriter("C:\\Users\\th3r0\\Documents\\Project8Jan2022\\Output\\output-" + OffsetDateTime.now() + ".json");
+            // Please make sure to refactor the name of the output directory
+            FileWriter myFileWriter = new FileWriter("output\\output-" + OffsetDateTime.now().toString().replace(":", "-") + ".json");
             myFileWriter.write(jsonObject.toJSONString());
             myFileWriter.close();
         } catch (Exception e) {
